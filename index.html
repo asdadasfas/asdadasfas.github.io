@@ -152,6 +152,86 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mysql 查询语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/16/mysql 查询语句/">SQL命令基本查询</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/16/mysql 查询语句/" class="archive-article-date">
+  	<time datetime="2019-10-16T08:34:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><b>全部查询</b><br>(student是表名)<br>查询所有人的所有信息</p>
+<p><b>SELECT   通配符   from   student;</b></p>
+<p>或者查询字段  通配符  换成字段<br>#选择列查询</p>
+<p><b>SELECT name,age,nation from student;</b></p>
+<p>查询可以添加别名</p>
+<p><b>SELECT name 姓名,age 年龄,nation 民族 from student;</b></p>
+<p>#条件查询<br>###使用where语句限制查询结果<br>查询年龄大于1000的同学#姓名和年龄；</p>
+<p><b>SELECT name 姓名,age 年龄,nation 民族 from student where age &gt; 1000;</b></p>
+<p>###多条件复合查询</p>
+<p><b>SELECT name 姓名,age 年龄,nation 民族 from student where age &gt; 1000 or name ‘张三’;</b></p>
+<p>#使用LIMIT限制查询返回行<br>查询所有人的学号和姓名,只显示第50页的数据，每页5条</p>
+<p><b>SELECT stuno,name from stuinfo LIMIT 0,5;</b></p>
+<p>#使用Order BY 进行查询排序<br>查询所有学员信息，按照年龄升序排序</p>
+<p><b>SELECT * from stuinfo order by age asc;</b></p>
+<p>查询名字是两个字，按照年龄降序排列</p>
+<p><b>SELECT * from stuinfo WHERE name LIKE ‘__’ order by age DESC;</b></p>
+<p>按照民族进行排序</p>
+<p><b>SELECT * from stuinfo order by nation DESC;</b></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/16/mysql 查询语句/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-mysql基础语句" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -159,33 +239,168 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/15/mysql基础语句/">mysql基础语句</a>
+      <a class="article-title" href="/2019/10/14/mysql基础语句/">操作表中数据使用SQL命令增删改</a>
     </h1>
   
 
         
-        <a href="/2019/10/15/mysql基础语句/" class="archive-article-date">
-  	<time datetime="2019-10-15T08:03:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-15</time>
+        <a href="/2019/10/14/mysql基础语句/" class="archive-article-date">
+  	<time datetime="2019-10-14T11:16:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="msql-添加数据"><a href="#msql-添加数据" class="headerlink" title="msql 添加数据"></a>msql 添加数据</h2><hr>
-<blockquote>
-<p>INSERT [INTO] TABLE_NAME  [(COLUMN,COLUMN1,COLUMN2…..)]VALUES (VALUE1,VALUE2,VALUE3…..);</p>
-</blockquote>
-<h2 id="msql-删除语句"><a href="#msql-删除语句" class="headerlink" title="msql 删除语句"></a>msql 删除语句</h2><hr>
-<blockquote>
-<p>DELETE FROM TABLE_NAME [WHERE search-condition]；</p>
-</blockquote>
-<h2 id="mysql-修改语句"><a href="#mysql-修改语句" class="headerlink" title="mysql 修改语句"></a>mysql 修改语句</h2><hr>
-<blockquote>
-<p>UPDATE TABLE_NAME SET COLUMN_NAME=VALUE,  COLUMN_NAME=VALUE [WHERE &lt;表达式&gt;];</p>
-</blockquote>
-<hr>
-<p>TABLE_NAME :表名<br>COLUMN字段名<br>VALUE:需要添加的值和COLUMN对应<br>INTO ：语法关键字 可以省略<br>search-condition: 筛选条件<br>SET ：是对指定字段进行修改</p>
+        <h1 id="第三章-用SQL命令操作表中数据"><a href="#第三章-用SQL命令操作表中数据" class="headerlink" title="第三章  用SQL命令操作表中数据 "></a>第三章  用SQL命令操作表中数据 <br></h1><p>在本章中介绍如何使用SQL命令对对数据库中的数据进行增加，删除和修改操作  <br><br><font size="5"><b>学习目标</b></font><br>使用insert,update,delete语句进行增删改<br><br>1.<b>增加数据</b><br><br><b>公式</b><br><b>INSERT  INTO  表名 （字段1 ，字段2 ， 字段3 ，字段4）VALUES （值1，值2，值3，值4）；</b><br><br><em>例子(表名：student)</em><br></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th align="right">age</th>
+<th align="right">sex</th>
+<th align="center">stuno</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>无</td>
+<td align="right">无</td>
+<td align="right">无</td>
+<td align="center">无</td>
+</tr>
+</tbody></table>
+<p><b>加入代码</b><br><b>INSERT  INTO  student （name ，age ， sex ，stuno）VALUES （‘李想’，20，男，‘12345’）；</b><br></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th align="right">age</th>
+<th align="right">sex</th>
+<th align="center">stuno</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>李想</td>
+<td align="right">20</td>
+<td align="right">男</td>
+<td align="center">12345</td>
+</tr>
+</tbody></table>
+<p>2.<b>删除数据</b><br><br><b>公式</b><br><b>DELETE FROM 表名 WHERE 条件字段 = 值;</b><br><br><em>例子(表名：student)</em><br></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th align="right">age</th>
+<th align="right">sex</th>
+<th align="center">stuno</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>李想</td>
+<td align="right">20</td>
+<td align="right">男</td>
+<td align="center">12345</td>
+</tr>
+<tr>
+<td>2</td>
+<td>欧尼酱</td>
+<td align="right">20</td>
+<td align="right">男</td>
+<td align="center">12346</td>
+</tr>
+</tbody></table>
+<p><b>加入代码</b><br><b>DELETE FROM student WHERE id = 1;</b><br></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th align="right">age</th>
+<th align="right">sex</th>
+<th align="center">stuno</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2</td>
+<td>欧尼酱</td>
+<td align="right">20</td>
+<td align="right">男</td>
+<td align="center">12346</td>
+</tr>
+</tbody></table>
+<p>3.<b>修改数据</b><br><br><b>公式</b><br><b>UPADTE 表名 SET 要更新的字段 = 值 WHERE 条件字段 = 值</b><br><br><em>例子(表名：student)</em><br></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th align="right">age</th>
+<th align="right">sex</th>
+<th align="center">stuno</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>李想</td>
+<td align="right">20</td>
+<td align="right">男</td>
+<td align="center">12345</td>
+</tr>
+<tr>
+<td>2</td>
+<td>欧尼酱</td>
+<td align="right">20</td>
+<td align="right">男</td>
+<td align="center">12346</td>
+</tr>
+<tr>
+<td>3</td>
+<td>欧尼酱2</td>
+<td align="right">20</td>
+<td align="right">男</td>
+<td align="center">12347</td>
+</tr>
+</tbody></table>
+<p><b>加入代码</b><br><b>UPADTE student SET name = 臭弟弟 WHERE id = 2</b><br></p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>name</th>
+<th align="right">age</th>
+<th align="right">sex</th>
+<th align="center">stuno</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>李想</td>
+<td align="right">20</td>
+<td align="right">男</td>
+<td align="center">12345</td>
+</tr>
+<tr>
+<td>2</td>
+<td>欧尼酱</td>
+<td align="right">20</td>
+<td align="right">男</td>
+<td align="center">12346</td>
+</tr>
+<tr>
+<td>3</td>
+<td>臭弟弟</td>
+<td align="right">20</td>
+<td align="right">男</td>
+<td align="center">12347</td>
+</tr>
+</tbody></table>
 
       
 
@@ -198,7 +413,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/15/mysql基础语句/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/10/14/mysql基础语句/">展开全文 >></a>
         </p>
       
 
@@ -228,101 +443,87 @@
 
 
   
-    <article id="post-web前端基础第一章" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-mysql逻辑运算符" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/11/web前端基础第一章/">web前端基础第一章</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/11/web前端基础第一章/" class="archive-article-date">
-  	<time datetime="2019-10-11T14:04:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-11</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="这是web-前端第一章的内容"><a href="#这是web-前端第一章的内容" class="headerlink" title="这是web 前端第一章的内容"></a>这是web 前端第一章的内容</h1>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/11/web前端基础第一章/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2019/10/10/hello-world/" class="archive-article-date">
-  	<time datetime="2019-10-10T11:09:32.266Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="�L������"><a href="#�L������" class="headerlink" title="�Ƚ������"></a>�Ƚ������</h2><table>
+<thead>
+<tr>
+<th>�����</th>
+<th>����</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>&gt;</td>
+<td>����</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>���ڵ���</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>С��</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>С�ڵ���</td>
+</tr>
+<tr>
+<td>=</td>
+<td>����</td>
+</tr>
+<tr>
+<td>!=��&lt;&gt;</td>
+<td>������</td>
+</tr>
+<tr>
+<td>IS  NULL</td>
+<td>�Ƿ�Ϊ��</td>
+</tr>
+<tr>
+<td>IS  NOT  NULL</td>
+<td>�Ƿ�Ϊ��</td>
+</tr>
+<tr>
+<td>IN</td>
+<td>�ж�һ��ֵ��IN�б��е�����һ��ֵ</td>
+</tr>
+<tr>
+<td>NOT  IN</td>
+<td>�ж�һ��ֵ����IN�б��е�����һ��ֵ</td>
+</tr>
+<tr>
+<td>LIKE</td>
+<td>ͨ���ƥ��   “ͨ���%��ָ���ⳤ�ȣ�ͨ���_��ָһ���ַ�”</td>
+</tr>
+<tr>
+<td>BETWEEN  AND</td>
+<td>�ж�һ��ֵ�Ƿ�������ֵ֮��</td>
+</tr>
+<tr>
+<td>****</td>
+<td></td>
+</tr>
+<tr>
+<td>##  �߼������</td>
+<td></td>
+</tr>
+<tr>
+<td>��OR(����</td>
+<td></td>
+</tr>
+<tr>
+<td>�룺And(����&amp;&amp;)</td>
+<td></td>
+</tr>
+<tr>
+<td>�ǣ�Not(���ߣ���</td>
+<td></td>
+</tr>
+</tbody></table>
 
       
 
@@ -335,7 +536,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/10/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/10/10/mysql逻辑运算符/">展开全文 >></a>
         </p>
       
 
